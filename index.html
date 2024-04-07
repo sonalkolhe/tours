@@ -1,0 +1,385 @@
+<!-- @format -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Snake</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
+  </head>
+  <body class="bg-gray-100">
+    <div class="h-screen w-screen fixed hidden blur z-99"></div>
+    <header class="p-4 shadow-md bg-gray-100 z-10">
+      <nav class="mx-auto flex justify-between items-center">
+        <a href="#" class="font-bold text-xl text-gray-800">VFL</a>
+        <ul class="hidden lg:flex gap-6">
+          <li class="font-bold text-lg text-gray-600">
+            <a href="#">Home</a>
+          </li>
+          <li class="font-bold text-lg text-gray-600">
+            <a href="#">Hotels</a>
+          </li>
+          <li class="font-bold text-lg text-gray-600">
+            <a href="#">M.I.C.E</a>
+          </li>
+          <li class="font-bold text-lg text-gray-600">
+            <a href="#">Contact Us</a>
+          </li>
+        </ul>
+        <button
+          class="rounded-3xl p-2 bg-black text-white text-bold sign-in-btn">
+          Sign in
+        </button>
+        <div class="lg:hidden">
+          <button id="menuToggle" class="text-gray-600 focus:outline-none">
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <div class="lg:md:px-14 lg:md:py-7 px-4 m-auto text-gray-700 z-1">
+      <div
+        class="signIn fixed bg-white p-8 rounded shadow-md max-w-md w-full hidden z-100">
+        <!-- Close Button -->
+        <button
+          class="close-signin absolute top-0 right-0 p-3 cursor-pointer"
+          onclick="toggleForm">
+          <i class="bi bi-x-circle"></i>
+        </button>
+
+        <h2 class="text-2xl font-semibold mb-4">Sign In</h2>
+        <form>
+          <div class="mb-4">
+            <label for="email" class="block text-gray-600 text-sm mb-2"
+              >Email:</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full border border-gray-300 p-2 rounded"
+              placeholder="Enter your email"
+              required />
+          </div>
+          <div class="mb-4">
+            <label for="password" class="block text-gray-600 text-sm mb-2"
+              >Password:</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="w-full border border-gray-300 p-2 rounded"
+              placeholder="Enter your password"
+              required />
+          </div>
+          <div class="mb-6">
+            <button
+              type="submit"
+              class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+              Sign In
+            </button>
+          </div>
+        </form>
+        <p class="text-gray-600 text-sm">
+          Don't have an account? <a href="#" class="text-blue-500">Sign Up</a>
+        </p>
+      </div>
+      <main
+        class="hero m-auto text-center pb-10 lg:pt-56 md:pt-44 sm:pt-32 pt-24 text-gray-700 relative text-white">
+        <img src="images/vfl.jpg" class="w-max h-max"  alt="">
+        <div class="w-6/12 m-auto min-w-fit">
+          <h1 class="md:text-3xl my-a8">
+            VFL Travel Services - Travel With Trust
+          </h1>
+          <h1 class="md:text-2xl sm:text-xl ">
+            Provide Unforgettable
+            <span class="text-yellow-300">Travel</span> Expirence
+          </h1>
+          <p class="py-12">
+            <i class="arrow bi bi-arrow-down text-xl font-bold"></i>
+          </p>
+        </div>
+      </main>
+      <main class="travel text-center font-bold lg:pb-20 sm:pb-10 z-10 bg-gray-100">
+        <h1 class="text-3xl py-16 underline">Find Your Choice</h1>
+        <div class="flex justify-between sm:gap-6 gap-1">
+          <a href="#" class="el">
+            <img src="./images/chill.jpg" alt="beach image" width="350px" />
+            <p>Travelling</p>
+            <div class="overlay">
+              <button class="text-sm">Learn More</button>
+            </div>
+          </a>
+          <a href="#" class="el">
+            <img src="./images/beaches.jpg" alt="beach image" width="350px" />
+            <p>Hotels</p>
+            <div class="overlay">
+              <button class="text-sm">Learn More</button>
+            </div>
+          </a>
+          <a href="#" class="el">
+            <img src="./images/open-map.jpg" alt="beach image" width="360px" />
+            <p>Flights</p>
+            <div class="overlay">
+              <button class="text-sm">Learn More</button>
+            </div>
+          </a>
+        </div>
+      </main>
+      <div class="my-24">
+        <div class="mb-10 relative">
+          <h1 class="underline font-bold md:text-2xl sm:text-xl">
+            SELECT NEXT TRIP WITH US
+          </h1>
+          <button>
+            <i
+              class="arrow bi bi-arrow-left-circle absolute left-[-2.5%] top-[45%] text-3xl font-bold"></i>
+          </button>
+          <div class="slider media-scroller snaps-inline">
+            <div class="media-element el">
+              <div class="zoom-img media-element">
+                <img src="images/white.jpg" data-src="images/Udaipur1.webp" alt="beach image" />
+              </div>
+              <p class="sm:text-base text-xs font-medium">
+                Discovering the Hidden Gems of udaipur Tourism Locations
+              </p>
+              <a class="overlay" href="./listPage.html" target="_blank">
+                <button class="text-sm">visit</button>
+              </a>
+            </div>
+            <div class="media-element el">
+              <div class="zoom-img media-element">
+                <img src="images/white.jpg" data-src="images/Udaipur2.webp" alt="beach image" />
+              </div>
+              <p class="sm:text-base font-medium text-xs">
+                How to Plan the Perfect Trip toudaipur Tourism Locations
+              </p>
+              <a class="overlay" href="./listPage.html" target="_blank">
+                <button class="text-sm">visit</button>
+              </a>
+            </div>
+            <div class="media-element el">
+              <div class="zoom-img media-element">
+                <img src="images/white.jpg" data-src="images/Mathura1.webp" alt="beach image" />
+              </div>
+              <p class="sm:text-base font-medium text-xs">
+                Old Architect Tourism Places: An Unforgettable Experience
+              </p>
+              <a class="overlay" href="./listPage.html" target="_blank">
+                <button class="text-sm">visit</button>
+              </a>
+            </div>
+            <div class="media-element el">
+              <div class="zoom-img media-element">
+                <img src="images/white.jpg" data-src="images/Nainital1.webp" alt="beach image" />
+              </div>
+              <p class="sm:text-base font-medium text-xs">
+                The Ultimate Guide to Visiting Nainital for a Trip
+              </p>
+              <a class="overlay" href="./listPage.html" target="_blank">
+                <button class="text-sm">visit</button>
+              </a>
+            </div>
+            <div class="media-element el">
+              <div class="zoom-img media-element">
+                <img src="images/white.jpg" data-src="images/Nainital2.webp" alt="beach image" />
+              </div>
+              <p class="sm:text-base font-medium text-xs">
+                Hill Station for a Trip: A Must-See Destination
+              </p>
+              <a class="overlay" href="./listPage.html" target="_blank">
+                <button class="text-sm">visit</button>
+              </a>
+            </div>
+          </div>
+
+          <button>
+            <i
+              class="arrow bi bi-arrow-right-circle absolute right-[-2.5%] top-[45%] text-3xl font-bold"></i>
+          </button>
+        </div>
+
+        <div class="mb-10 relative">
+          <h1 class="underline font-bold md:text-2xl sm:text-xl">
+            GET 15% OFF ON FLIGHT BOOKINGS
+          </h1>
+          <button>
+            <i
+              class="arrow bi bi-arrow-left-circle absolute left-[-2.5%] top-[45%] text-3xl font-bold"></i>
+          </button>
+          <div class="slider media-scroller snaps-inline">
+            <div class="media-element el">
+              <div class="zoom-img media-element">
+                <img src="images/white.jpg" data-src="images/kashmir.jpg" alt="beach image" />
+              </div>
+              <p class="sm:text-base font-medium text-xs">
+                10. Steps to Planning the Perfect Boating Trip
+              </p>
+              <a class="overlay" href="./listPage.html" target="_blank">
+                <button class="text-sm">visit</button>
+              </a>
+            </div>
+            <div class="media-element el">
+              <div class="zoom-img media-element">
+                <img src="images/white.jpg" data-src="images/Amritsar3.webp" alt="beach image" />
+              </div>
+              <p class="sm:text-base font-medium text-xs">
+                Golden Temple: A Spiritual Haven in Amritsar
+              </p>
+              <a class="overlay" href="./listPage.html" target="_blank">
+                <button class="text-sm">visit</button>
+              </a>
+            </div>
+            <div class="media-element el">
+              <div class="zoom-img media-element">
+                <img src="images/white.jpg" data-src="images/Delhi2.webp" alt="beach image" />
+              </div>
+              <p class="sm:text-base font-medium text-xs">
+                The Red Fort: A Symbol of India’s Rich Cultural Heritage
+              </p>
+              <a class="overlay" href="./listPage.html" target="_blank">
+                <button class="text-sm">visit</button>
+              </a>
+            </div>
+            <div class="media-element el">
+              <div class="zoom-img media-element">
+                <img src="images/white.jpg" data-src="images/nepal.jpg" alt="beach image" />
+              </div>
+              <p class="sm:text-base font-medium text-xs">
+                Explore the Sacred Sites of Buddhism in India and Nepal
+              </p>
+              <a class="overlay" href="./listPage.html" target="_blank">
+                <button class="text-sm">visit</button>
+              </a>
+            </div>
+            <div class="media-element el">
+              <div class="zoom-img media-element">
+                <img src="images/white.jpg" data-src="images/sunrise.jpg" alt="beach image" />
+              </div>
+              <p class="sm:text-base font-medium text-xs">
+                Explore the White Desert of Rann of Kutch at Sunrise
+              </p>
+              <a class="overlay" href="./listPage.html" target="_blank">
+                <button class="text-sm">visit</button>
+              </a>
+            </div>
+          </div>
+          <button>
+            <i
+              class="arrow bi bi-arrow-right-circle absolute right-[-2.5%] top-[45%] text-3xl font-bold"></i>
+          </button>
+        </div>
+
+        <div class="mb-10 relative">
+          <h1 class="underline font-bold md:text-2xl sm:text-xl">
+            GET 15% OFF OF FLIGHT BOOKINGS
+          </h1>
+          <button>
+            <i
+              class="arrow bi bi-arrow-left-circle absolute left-[-2.5%] top-[45%] text-3xl font-bold"></i>
+          </button>
+          <div class="slider media-scroller snaps-inline">
+            <div class="media-element el">
+              <div class="zoom-img media-element">
+                <img src="images/white.jpg" data-src="./images/peak.jpg" alt="beach image" />
+              </div>
+              <p class="sm:text-base font-medium text-xs">
+                What are some other popular snow destinations in India?
+              </p>
+              <a class="overlay" href="./listPage.html" target="_blank">
+                <button class="text-sm">visit</button>
+              </a>
+            </div>
+            <div class="media-element el">
+              <div class="zoom-img media-element">
+                <img src="images/white.jpg" data-src="./images/tea.jpg" alt="beach image" />
+              </div>
+              <p class="sm:text-base font-medium text-xs">
+                Experience the Organic Farming and Culture of Assam at the Assamica Agro Organic Farm
+              </p>
+              <a class="overlay" href="./listPage.html" target="_blank">
+                <button class="text-sm">visit</button>
+              </a>
+            </div>
+            <div class="media-element el">
+              <div class="zoom-img media-element">
+                <img src="images/white.jpg" data-src="./images/sikkim-tourism.jpg" alt="beach image" />
+              </div>
+              <p class="sm:text-base font-medium text-xs">
+                isit the Birthplace of Buddhism and the World’s Largest Temple in India
+              </p>
+              <a class="overlay" href="./listPage.html" target="_blank">
+                <button class="text-sm">visit</button>
+              </a>
+            </div>
+            <div class="media-element el">
+              <div class="zoom-img media-element">
+                <img src="images/white.jpg" data-src="./images/boat.jpg" alt="beach image" />
+              </div>
+              <p class="sm:text-base font-medium text-xs">
+                Explore the God’s Own Country: A Guide to the Best Tourist Places in Kerala
+              </p>
+              <a class="overlay" href="./listPage.html" target="_blank">
+                <button class="text-sm">visit</button>
+              </a>
+            </div>
+            <div class="media-element el">
+              <div class="zoom-img media-element">
+                <img src="images/white.jpg" data-src="./images/goa.jpg" alt="beach image" />
+              </div>
+              <p class="sm:text-base font-medium text-xs">
+                Fly High and Free: A Guide to the Best Paragliding Destinations in the World
+              </p>
+              <a class="overlay" href="./listPage.html" target="_blank">
+                <button class="text-sm">visit</button>
+              </a>
+            </div>
+          </div>
+          <button>
+            <i
+              class="arrow bi bi-arrow-right-circle absolute right-[-2.5%] top-[45%] text-3xl font-bold"></i>
+          </button>
+        </div>
+        </div>
+      </div>
+      <footer class="my-5 bg-gray-500 text-white md:flex">
+        <div class="text-3xl flex gap-8 m-auto justify-around p-5">
+          <a href="#">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="#">
+            <i class="bi bi-github"></i>
+          </a>
+          <a href="#">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="#">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+        </div>
+        <div class="md:w-6/12 py-[10%] md:p-16 p-6"><strong>VFL Travel Services – </strong>A Full- Corporate Travel Management Company. VFL is one of the most reputed travel management company offering a complete range of best-in-class corporate and business travel management services.
+
+          Our customers can choose from a wide selection of Outbound & Domestic tours and packages across the world ranging from India, South- East Asia and Dubai. We specialize in cultural tours, adventure tours, incentive groups, pilgrimage tours and We also provide customized itineraries tailor-made to specific requirements.
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+    <script src="scroller.js"></script>
+  </body>
+</html>

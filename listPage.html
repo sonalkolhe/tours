@@ -1,0 +1,120 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tours</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
+  </head>
+  <body class="bg-gray-100">
+    <header class="p-4 shadow-md bg-gray-100 z-10">
+      <nav class="mx-auto flex justify-between items-center">
+        <a href="#" class="font-bold text-xl text-gray-800">VFL</a>
+
+        <ul class="hidden lg:flex gap-6">
+          <li class="font-bold text-lg text-gray-600">
+            <a href="#">Home</a>
+          </li>
+          <li class="font-bold text-lg text-gray-600">
+            <a href="#">Hotels</a>
+          </li>
+          <li class="font-bold text-lg text-gray-600">
+            <a href="#">M.I.C.E</a>
+          </li>
+          <li class="font-bold text-lg text-gray-600">
+            <a href="#">Contact Us</a>
+          </li>
+        </ul>
+        <button
+          class="rounded-3xl p-2 bg-black text-white text-bold sign-in-btn">
+          Sign in
+        </button>
+        <div class="lg:hidden">
+          <button id="menuToggle" class="text-gray-600 focus:outline-none">
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <div class="container m-auto">
+      <div class="sm:p-16 pt-[10%] m-auto">
+        <h1 class="text-center text-3xl font-medium">SEARCH FOR?</h1>
+        <div class="w-6/12 m-auto">
+          <ul
+            class="flex justify-around sm:text-base text-xs gap-6 m-auto pt-12 pb-8">
+            <li><a href="#" class="underline">TOURS</a></li>
+            <li><a href="#" class="underline">FLIGHTS</a></li>
+            <li><a href="#" class="underline">HOTELS</a></li>
+            <li><a href="#" class="underline">LOCATION</a></li>
+          </ul>
+          <form class="relative">
+            <input
+              placeholder="search"
+              class="w-[100%] rounded-xl p-4 h-14 border"
+              type="text" />
+            <button
+              class="bg-green-500 hover:bg-green-600 p-2 text-white absolute right-[2%] top-[12%] rounded-2xl"
+              type="submit">
+              search
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- sample -->
+      <div id="root" class="container p-2 rounded"></div>
+      <footer class="bg-gray-200 pt-[10%] m-auto">
+        <div class="flex gap-4 m-auto justify-center p-20">
+          <button class="rounded-xl bg-white p-2">1</button>
+          <button class="rounded-xl bg-white p-2">2</button>
+          <button class="rounded-xl bg-white p-2">3</button>
+          <button class="rounded-xl bg-white p-2">4</button>
+        </div>
+      </footer>
+    </div>
+    <footer class="mt-20 my-5 bg-gray-500 text-white md:flex">
+      <div class="text-3xl flex gap-8 m-auto justify-around p-5">
+        <a href="#">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="#">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="#">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="#">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+      </div>
+      <div class="md:w-6/12 py-[10%] md:p-16 p-6">
+        <strong>VFL Travel Services – </strong>A Full- Corporate Travel
+        Management Company. VFL is one of the most reputed travel management
+        company offering a complete range of best-in-class corporate and
+        business travel management services. Our customers can choose from a
+        wide selection of Outbound & Domestic tours and packages across the
+        world ranging from India, South- East Asia and Dubai. We specialize in
+        cultural tours, adventure tours, incentive groups, pilgrimage tours and
+        We also provide customized itineraries tailor-made to specific
+        requirements.
+      </div>
+    </footer>
+    <script src="addElement.js"></script>
+  </body>
+</html>
